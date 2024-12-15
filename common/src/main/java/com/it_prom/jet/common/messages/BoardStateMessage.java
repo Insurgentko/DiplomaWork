@@ -1,6 +1,5 @@
 package com.it_prom.jet.common.messages;
 
-import com.it_prom.jet.common.bean.Airport;
 import com.it_prom.jet.common.bean.Board;
 import com.it_prom.jet.common.bean.Source;
 import com.it_prom.jet.common.bean.Type;

@@ -10,14 +10,14 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Airport {
+public class AirPort {
     private String name;
     private List<String> boards = new ArrayList<>();
     private int x;
     private int y;
 
 
-    private void addBoard(String boardName){
+    public void addBoard(String boardName){
         int ind = boards.indexOf(boardName);
         if(ind>=0){
             boards.set(ind, boardName);
@@ -26,7 +26,7 @@ public class Airport {
         }
     }
 
-    private void removeBoard(String boardName){
+    public void removeBoard(String boardName){
         boards.remove(boardName);
     }
 }
