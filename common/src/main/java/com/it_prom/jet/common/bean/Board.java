@@ -28,7 +28,7 @@ public class Board {
         return route != null;
     }
 
-    // implementation of a linear Bezier curve
+    // реализация линейной кривой Безье, для вычисления позиции борта
     private void calculatePosition(RoutePath routeDirection) {
         double t = routeDirection.getProgress() / 100;
 
