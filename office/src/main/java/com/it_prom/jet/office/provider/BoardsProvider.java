@@ -14,6 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 @Slf4j
 @Component
 public class BoardsProvider {
+    @Getter
     private final List<Board> boards = new ArrayList<>();
     private final Lock lock = new ReentrantLock(true);
 
