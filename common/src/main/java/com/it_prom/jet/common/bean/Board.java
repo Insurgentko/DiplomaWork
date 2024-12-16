@@ -29,7 +29,7 @@ public class Board {
     }
 
     // реализация линейной кривой Безье, для вычисления позиции борта
-    private void calculatePosition(RoutePath routeDirection) {
+    public void calculatePosition(RoutePath routeDirection) {
         double t = routeDirection.getProgress() / 100;
 
         double toX = (1 - t) * routeDirection.getFrom().getX() + t * routeDirection.getTo().getX();
