@@ -54,7 +54,7 @@ public class BoardJob {
                             .findAny();
                     if(route.isEmpty()){
                         List<RoutePath> path = board.getRoute().getPath();
-                        board.setLocation(path.get(path.size()-1).getTo().getName();
+                        board.setLocation(path.get(path.size()-1).getTo().getName());
                         board.setBusy(false);
                     }
 
