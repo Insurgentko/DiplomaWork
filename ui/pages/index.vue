@@ -1,13 +1,57 @@
 <template>
-  <div style="width: 100%; min-height: 100vh; display: inline-flex; ">
+  <div style="width: 100%; min-height: 100vh; display: inline-flex;">
     <div class="messages"></div>
-    <div class="radar"></div>
-  <div/>
+    <div class="radar">{{ports}}</div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  data(){
+    return{
+      socket: null,
+      ports: []
+    }
+  },
+  mounted() {
+    this.defineSocket()
+    setInterval(this.wakeSocketUp, 5000)
+  },
+  methods:{
+    defineSocket(){
+      this.socket = new WebSocket("ws://localhost:8083/websocket")
+
+      this.socket.onopen = () => {
+        this.socket.onmessage = (msg, ctx) => {
+          let message = JSON.parse(msg.data)
+          if(message.source === "AIRPORT"){
+            this.setAirPort(message.airPort)
+          }
+        }
+      }
+    },
+    wakeSocketUp(){
+      if(this.socket){
+        if(this.ports.length === 0){
+          this.socket.send("update")
+        }
+      }else{
+        this.defineSocket()
+      }
+    },
+    setAirPort(port){
+      let ind = -1
+      this.ports.forEach((row, i) => {
+        if(row.name === port.name){
+          ind = i
+        }
+      })
+      if(ind>=0){
+        this.ports.splice(ind, 1)
+      }
+      this.ports.push(port)
+    }
+  }
 }
 </script>
 
@@ -25,6 +69,7 @@ export default {
 .radar{
   width: 90%;
   position: relative;
-  background: #232323;
+  background: transparent url("assets/grass.png");
+  min-height: 100vh;
 }
 </style>

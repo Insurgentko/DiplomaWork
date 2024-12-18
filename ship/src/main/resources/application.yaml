@@ -11,7 +11,7 @@ spring:
       auto-offset-reset: latest
 
 application:
-  boards:
+  board:
     - name: "Board 1"
       location: "Port 1"
       speed: 3
