@@ -1,7 +1,12 @@
 <template>
   <div style="width: 100%; min-height: 100vh; display: inline-flex;">
     <div class="messages"></div>
-    <div class="radar">{{ports}}</div>
+    <div class="radar">
+      <Port v-for="port in ports"
+            :key="port.name"
+            :port="port"
+            :click-callback="addRoute"></Port>
+    </div>
   </div>
 </template>
 
@@ -29,6 +34,9 @@ export default {
           }
         }
       }
+    },
+    addRoute(){
+
     },
     wakeSocketUp(){
       if(this.socket){
