@@ -1,0 +1,28 @@
+# Игнорируем папку node_modules внутри ui
+ui/node_modules/
+
+# Игнорируем логи и временные файлы
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Игнорируем файлы окружения
+.env
+.env.local
+.env.*.local
+
+# Игнорируем временные папки
+.DS_Store
+dist/
+build/
+coverage/
+
+# Игнорируем зависимости для IDE
+.idea/
+.vscode/
+*.iml
+
+# Игнорируем lock-файлы при необходимости
+package-lock.json
+yarn.lock
