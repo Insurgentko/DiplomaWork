@@ -28,10 +28,10 @@ public class PathService {
             airPortsProvider.getPorts().stream()
                     .filter(airPort -> airPort.getName().equals(location))
                     .findFirst()
-                    .ifPresent(airPort -> {points.add(new RoutePoint(airPort));});
+                    .ifPresent(airPort -> points.add(new RoutePoint(airPort)));
         });
 
-        for (int i = 0; i< points.size() - 1; i++){
+        for (int i = 0; i < points.size() - 1; i++){
             path.add(new RoutePath());
         }
 

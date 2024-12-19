@@ -28,7 +28,7 @@ public class BoardJob {
 
     @Scheduled(initialDelay = 0, fixedDelay = 250)
     public void fly(){
-        boardProvider.getBoard().stream()
+        boardProvider.getBoards().stream()
                 .filter(Board::hasRoute)
                 .forEach(board -> {
                     board.getRoute().getPath().stream().filter(RoutePath::inProgress)
@@ -46,7 +46,7 @@ public class BoardJob {
     @Async
     @Scheduled(initialDelay = 0, fixedDelay = 1000)
     public void notifyState(){
-        boardProvider.getBoard().stream()
+        boardProvider.getBoards().stream()
                 .filter(Board::isBusy)
                 .forEach(board -> {
                     Optional<RoutePath> route = board.getRoute().getPath().stream()

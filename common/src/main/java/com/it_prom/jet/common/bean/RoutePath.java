@@ -1,13 +1,11 @@
 package com.it_prom.jet.common.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
 @AllArgsConstructor
 public class RoutePath {
     private RoutePoint from;

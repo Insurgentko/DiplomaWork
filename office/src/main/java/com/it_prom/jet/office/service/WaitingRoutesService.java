@@ -15,7 +15,6 @@ import java.util.concurrent.locks.ReentrantLock;
 @Service
 @RequiredArgsConstructor
 public class WaitingRoutesService {
-    private final AirPortsProvider airPortsProvider;
     private final Lock lock = new ReentrantLock(true);
     private final List<Route> list = new ArrayList<>();
 

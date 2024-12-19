@@ -20,9 +20,9 @@ public class MessageListener {
     private final MessageConverter messageConverter;
 
     @Autowired
-    private Map<String, MessageProcessor<?extends Message>> processors= new HashMap<>();
+    private Map<String, MessageProcessor<?extends Message>> processors = new HashMap<>();
 
-    @KafkaListener(id = "BoardId", topics="officeRoutes")
+    @KafkaListener(id="BoardId", topics="officeRoutes")
     public void radarListener(String data){
         String code = messageConverter.extractCode(data);
         try {

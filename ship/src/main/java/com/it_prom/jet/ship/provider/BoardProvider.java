@@ -14,6 +14,6 @@ import java.util.List;
 @Component
 @ConfigurationProperties(prefix = "application")
 public class BoardProvider {
-    private final List<Board> board = new ArrayList<>();
+    private final List<Board> boards = new ArrayList<>();
 
 }

@@ -17,13 +17,12 @@ public class OfficeRouteProcessor implements MessageProcessor<OfficeRouteMessage
 
     private final BoardProvider boardProvider;
     private final MessageConverter messageConverter;
-    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Override
     public void process(String jsonMessage) {
         OfficeRouteMessage msg = messageConverter.extractMessage(jsonMessage, OfficeRouteMessage.class);
         Route route = msg.getRoute();
-        boardProvider.getBoard().stream()
+        boardProvider.getBoards().stream()
                 .filter(board -> board.noBusy() && route.getBoardName().equals(board.getName()))
                 .findFirst()
                 .ifPresent(board -> {

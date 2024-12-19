@@ -22,9 +22,9 @@ public class AirPortsProvider {
         AtomicReference<AirPort> res = new AtomicReference<>();
         ports.stream().filter(airPort -> airPort.getBoards().contains(boardName))
                 .findFirst()
-                .ifPresent(airport -> {
-                    airport.removeBoard(boardName);
-                    res.set(airport);
+                .ifPresent(airPort -> {
+                    airPort.removeBoard(boardName);
+                    res.set(airPort);
                 });
         return res.get();
     }

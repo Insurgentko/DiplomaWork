@@ -1,5 +1,5 @@
 <template>
-  <div class="radioBlock" :style="'position: absolute; left: calc(' + port.x + '% - 50px); top: calc(' + port.y + '% - 50px);'">
+  <div class="radioBlock" :style="'position: absolute; left: calc(' + port.x + '% - 100px); top: calc(' + port.y + '% - 100px)'">
   <div class="radioPoint" @click="clickCallback(port)"></div>
   <div class="title">
   {{port.name}} <span v-for="(row, ind) in port.boards"
@@ -19,15 +19,16 @@ export default {
 </script>
 <style>
 .radioBlock .radioPoint{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   background: transparent url("assets/radio.png") no-repeat center center/cover;
 }
 
 .radioBlock .title{
   background: #232323;
   color: chartreuse;
-  padding: 2px 5px;
+  padding: 5px 5px;
   text-align: center;
+  font-size: 18px;
 }
 </style>

@@ -1,4 +1,5 @@
 export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
+export { default as Plane } from '../..\\components\\Plane.vue'
 export { default as Port } from '../..\\components\\Port.vue'
 export { default as Tutorial } from '../..\\components\\Tutorial.vue'
 

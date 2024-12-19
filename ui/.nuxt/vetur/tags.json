@@ -2,6 +2,9 @@
   "NuxtLogo": {
     "description": "Auto imported from components/NuxtLogo.vue"
   },
+  "Plane": {
+    "description": "Auto imported from components/Plane.vue"
+  },
   "Port": {
     "description": "Auto imported from components/Port.vue"
   },

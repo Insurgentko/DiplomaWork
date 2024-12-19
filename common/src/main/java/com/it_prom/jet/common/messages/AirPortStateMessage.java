@@ -11,9 +11,9 @@ import lombok.Setter;
 public class AirPortStateMessage extends Message{
     private AirPort airPort;
 
-    public AirPortStateMessage(AirPort airport) {
+    public AirPortStateMessage(AirPort airPort) {
         this();
-        this.airPort = airport;
+        this.airPort = airPort;
     }
 
     public AirPortStateMessage() {

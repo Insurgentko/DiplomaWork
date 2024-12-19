@@ -21,7 +21,7 @@ public class OfficeStateProcessor implements MessageProcessor<OfficeStateMessage
 
     @Override
     public void process(String jsonMessage) {
-        boardProvider.getBoard().forEach(board -> {
+        boardProvider.getBoards().forEach(board -> {
             kafkaTemplate.sendDefault(messageConverter.toJson(new BoardStateMessage(board)));
         });
     }
